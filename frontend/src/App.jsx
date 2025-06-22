@@ -5,11 +5,11 @@ import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar.jsx'
 import { Toaster } from "react-hot-toast"
 
-import HomePage          from './pages/HomePage';
-import ProfilePage       from './pages/ProfilePage';
-import CreateWritingPage from './pages/CreateWritingPage';
-import SearchResultPage  from './pages/SearchResultPage';
-import WritingDetailPage from './pages/WritingDetailPage';
+import HomePage          from './pages/HomePage.jsx';
+import ProfilePage       from './pages/ProfilePage.jsx';
+import CreateWritingPage from './pages/CreateWritingPage.jsx';
+import SearchResultPage  from './pages/SearchResultPage.jsx';
+import WritingDetailPage from './pages/WritingDetailPage.jsx';
 
 function App() {
 

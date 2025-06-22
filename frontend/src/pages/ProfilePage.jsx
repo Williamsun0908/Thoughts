@@ -4,7 +4,7 @@ import api from '../lib/axios'
 import { Link } from 'react-router'
 import { MathJax } from 'better-react-mathjax'
 import "../index.css"
-import Writing from '../components/Writing'
+import Writing from '../components/Writing.jsx'
 import { useLocation } from 'react-router'
 import Avatar from 'boring-avatars'
 import { variant, colors } from '../config/avatarStyle'

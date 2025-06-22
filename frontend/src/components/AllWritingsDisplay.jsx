@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { MathJax } from "better-react-mathjax";
 import api from '../lib/axios'
 import { Link } from 'react-router'
-import Writing from './Writing';
+import Writing from './Writing.jsx';
 import '../index.css'
 
 

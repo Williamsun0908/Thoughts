@@ -1,5 +1,5 @@
 import React from 'react'
-import WritingDetail from '../components/WritingDetail'
+import WritingDetail from '../components/WritingDetail.jsx'
 
 const WritingDetailPage = (props) => {
   return (
