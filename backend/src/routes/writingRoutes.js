@@ -5,10 +5,10 @@ const router = express.Router()
 
 router.get("/", getAllWritings)
 router.get("/search", searchWritings)
+router.get("/profile/:googleId",getWritingsByGoogleId)
 router.get("/:id", getWritingById)
 router.post("/",createWriting)
 router.put("/:id",updateWriting)
 router.delete("/:id", deleteWriting)
-router.get("/profile/:googleId",getWritingsByGoogleId)
 
 export default router
