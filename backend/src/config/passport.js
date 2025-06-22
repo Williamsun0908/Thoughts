@@ -10,8 +10,6 @@ const callbackURL =
     ? "https://thoughtsoverflow.com/auth/google/callback"
     : "http://localhost:5001/auth/google/callback";
 
- passport.
-
 passport.use(
   new GoogleStrategy(
     {
