@@ -5,10 +5,10 @@ import { useState, useEffect } from 'react'
 import NavBar from './components/NavBar.jsx'
 import { Toaster } from "react-hot-toast"
 
-import HomePage          from './pages/HomePage.jsx';
-import ProfilePage       from './pages/ProfilePage.jsx';
+import Homepage from './pages/Homepage.jsx'
+import ProfilePage from './pages/ProfilePage.jsx';
 import CreateWritingPage from './pages/CreateWritingPage.jsx';
-import SearchResultPage  from './pages/SearchResultPage.jsx';
+import SearchResultPage from './pages/SearchResultPage.jsx';
 import WritingDetailPage from './pages/WritingDetailPage.jsx';
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
       <div><Toaster/></div>
       <NavBar user={user}/>
       <Routes>
-        <Route path="/" element={<HomePage/>}/>
+        <Route path="/" element={<Homepage/>}/>
         <Route path="/create" element={<CreateWritingPage user={user}/>}/>
         <Route path="/searchresult" element={<SearchResultPage/>}/>
         <Route path="/writing/:id" element={<WritingDetailPage user={user}/>}/>
