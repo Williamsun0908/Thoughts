@@ -90,9 +90,17 @@ const NavBar = (props) => {
             </ul>
         </div>
         <div className="navbar-end">
+            {
+            
+            !props.user?
+            
             <div className="btn border-none bg-slate-100" onClick={login}>
-                    Login to Write
+                Login to Write
             </div>
+            :
+            <></>
+            }
+
             {!props.user ? 
             (
             <></>
