@@ -2,16 +2,24 @@ import React from 'react'
 import { Link } from 'react-router'
 import { useGoogleLogin } from '@react-oauth/google'
 import toast from 'react-hot-toast'
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { useNavigate } from 'react-router'
 
 const NavBar = (props) => {
 
     const navigate = useNavigate()
 
-    const login = window.google?.accounts.oauth2.initCodeClient
-    ? () => window.location.assign(`${import.meta.env.VITE_API}/auth/google`)
-    : () => alert("Google SDK not ready");
+    // const login = window.google?.accounts.oauth2.initCodeClient
+    // ? () => window.location.assign(`${import.meta.env.VITE_API}/auth/google`)
+    // : () => alert("Google SDK not ready");
+
+    const login = () => {
+  if (window.google?.accounts?.oauth2?.initCodeClient) {
+    window.location.assign(`${import.meta.env.VITE_API}/auth/google`);
+  } else {
+    toast.error('Google SDK is still loading…');
+  }
+};
 
     const searchInputRef  = useRef(); 
 
@@ -82,13 +90,9 @@ const NavBar = (props) => {
             </ul>
         </div>
         <div className="navbar-end">
-            {(window.google && !props.user)?
-                (<div className="btn border-none bg-slate-100" onClick={login}>
+            <div className="btn border-none bg-slate-100" onClick={login}>
                     Login to Write
-                </div>)
-                :
-                (<></>)
-            }
+            </div>
             {!props.user ? 
             (
             <></>

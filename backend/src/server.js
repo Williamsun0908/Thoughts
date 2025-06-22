@@ -18,6 +18,13 @@ connectDB(process.env.DB_URI)
 // Middlewares //
 const app = express()
 
+// Allow requests from different frontend PORT(default 5173).
+if(process.env.NODE_ENV !== "production"){
+  app.use(cors({
+    origin: "http://localhost:5173", credentials: true
+  }))
+}
+
 // For deployment
 const __dirname = path.resolve()
 
@@ -42,13 +49,6 @@ app.use(passport.session());
 
 // Convert raw text to JSON
 app.use(express.json())
-
-// Allow requests from different frontend PORT(default 5173).
-if(process.env.NODE_ENV !== "production"){
-  app.use(cors({
-    origin: "http://localhost:5173", credentials: true
-  }))
-}
 
 
 app.use("/api/writings", writingRoutes)
